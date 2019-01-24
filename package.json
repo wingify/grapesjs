@@ -28,7 +28,7 @@
     "babel-register": "^6.26.0",
     "documentation": "^8.1.2",
     "eslint": "^5.9.0",
-    "grapesjs-plugin-forms": "^1.0.1",
+    "grapesjs-plugin-forms": "https://github.com/wingify/grapesjs-plugin-forms.git#v1.0.6",
     "grapesjs-preset-webpage": "^0.1.10",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.2.0",

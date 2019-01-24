@@ -379,7 +379,7 @@ module.exports = () => ({
         case 'font-size':
         case 'letter-spacing':
         case 'line-height':
-          obj.units = ['px', 'em', 'rem', '%'];
+          obj.units = ['px', 'em', 'rem', '%', 'pt'];
           break;
         case 'border-width':
           obj.units = ['px', 'em'];
