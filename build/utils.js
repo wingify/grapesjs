@@ -87,11 +87,33 @@ const getGrapesJSEditor = () => {
   return editor;
 };
 
+const addKeyToStyleProperty = (allProperties, propertyName, key, value) => {
+  allProperties.forEach(sector => {
+    sector.build.forEach(property => {
+      if (property.property === propertyName) {
+        property[key] = value;
+      }
+    })
+  })
+};
+
+const removeKeyFromProperty = (allProperties, propertyName, key) => {
+  allProperties.forEach(sector => {
+    sector.build.forEach(property => {
+      if (property.property === propertyName) {
+        delete property[key];
+      }
+    })
+  })
+};
+
 module.exports = {
   exportJsonToFile: exportJsonToFile,
   copyFile: copyFile,
   removeImportExportStatements: removeImportExportStatements,
   rewriteComponentJsFile: rewriteComponentJsFile,
   restoreModifiedFiles: restoreModifiedFiles,
-  getGrapesJSEditor: getGrapesJSEditor
+  getGrapesJSEditor: getGrapesJSEditor,
+  addKeyToStyleProperty: addKeyToStyleProperty,
+  removeKeyFromProperty: removeKeyFromProperty
 };

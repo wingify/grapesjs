@@ -34,5 +34,15 @@ sectors.forEach(sector => {
   delete sector.buildProps;
 });
 
+//add the display property fullWidth: true for styles to be shown in full width
+utils.addKeyToStyleProperty(sectors, 'font-family', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'opacity', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
+
+//Remove values from font-family property as we would be getting these from the user's page
+utils.removeKeyFromProperty(sectors, 'font-family', 'list');
+utils.removeKeyFromProperty(sectors, 'font-family', 'defaults');
+
 utils.exportJsonToFile('build/dist/grapes-styles.js', sectors);
 console.log('Styles exported successfully.');
