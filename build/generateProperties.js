@@ -80,6 +80,14 @@ try {
       property.props = property.props.filter(prop => prop.label !== 'Options');
     }
   });
+
+  //add an exception for BUTTON element -> Remove Content property
+  elementProperties.forEach(property => {
+    if (property.type === 'button') {
+      property.props = property.props.filter(prop => prop.type !== 'content');
+    }
+  });
+
   utils.exportJsonToFile('build/dist/grapes-properties.js', elementProperties);
   console.log('Properties exported successfully');
 
