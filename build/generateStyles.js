@@ -40,6 +40,15 @@ utils.addKeyToStyleProperty(sectors, 'opacity', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
 
+const displayNames = {
+  'font-family': 'Font family',
+  'font-size': 'Font size'
+};
+
+for (let i in displayNames) {
+  utils.addKeyToStyleProperty(sectors, i, 'displayName', displayNames[i]);
+}
+
 //Remove values from font-family property as we would be getting these from the user's page
 utils.removeKeyFromProperty(sectors, 'font-family', 'list');
 utils.removeKeyFromProperty(sectors, 'font-family', 'defaults');
