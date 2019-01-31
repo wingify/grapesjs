@@ -14,7 +14,7 @@ let sectors = [{
 },{
   name: 'Dimensions',
   open: false,
-  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'box-shadow-h', 'box-shadow-v', 'box-shadow-blur', 'box-shadow-spread', 'box-shadow-color', 'box-shadow-type', 'top', 'right', 'bottom', 'left', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left']
+  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'box-shadow-h', 'box-shadow-v', 'box-shadow-blur', 'box-shadow-spread', 'box-shadow-color', 'box-shadow-type', 'top', 'right', 'bottom', 'left', 'margin', 'padding']
 },{
   name: 'Border',
   open: false,

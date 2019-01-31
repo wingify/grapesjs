@@ -71,7 +71,6 @@ module.exports = () => ({
           obj.type = 'radio';
           break;
         case 'float':
-        case 'position':
         case 'display':
         case 'flex-direction':
         case 'flex-wrap':
@@ -124,7 +123,6 @@ module.exports = () => ({
         case 'border-top-right-radius':
         case 'border-bottom-left-radius':
         case 'border-bottom-right-radius':
-        case 'border-width':
         case 'box-shadow-h':
         case 'box-shadow-v':
         case 'box-shadow-blur':
@@ -148,6 +146,8 @@ module.exports = () => ({
         case 'border-radius':
         case 'border':
         case 'transform':
+        case 'border-width':
+        case 'position':
           obj.type = 'composite';
           break;
         case 'color':
@@ -769,6 +769,16 @@ module.exports = () => ({
             'transform-scale-z'
           ]);
           break;
+        case 'border-width':
+          obj.properties = this.build([
+            'border-top-width',
+            'border-right-width',
+            'border-bottom-width',
+            'border-left-width'
+          ]);
+          break;
+        case 'position':
+          obj.properties = this.build(['top', 'right', 'bottom', 'left']);
       }
 
       //step
