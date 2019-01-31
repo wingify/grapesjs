@@ -93,6 +93,14 @@ const addKeyToStyleProperty = (allProperties, propertyName, key, value) => {
       if (property.property === propertyName) {
         property[key] = value;
       }
+
+      if (Array.isArray(property.properties)) {
+        property.properties.forEach(function(nestedProperty) {
+          if (nestedProperty.property === propertyName) {
+            nestedProperty[key] = value;
+          }      
+        });
+      }
     })
   })
 };
