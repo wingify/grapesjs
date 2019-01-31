@@ -92,6 +92,7 @@ module.exports = () => ({
         case 'overflow':
         case 'overflow-x':
         case 'overflow-y':
+        case 'font-style':
           obj.type = 'select';
           break;
         case 'top':
@@ -139,6 +140,7 @@ module.exports = () => ({
         case 'flex-grow':
         case 'flex-shrink':
         case 'flex-basis':
+        case 'word-spacing':
           obj.type = 'integer';
           break;
         case 'margin':
@@ -203,6 +205,9 @@ module.exports = () => ({
         case 'position':
           obj.defaults = 'static';
           break;
+        case 'font-style':
+          obj.defaults = 'normal';
+          break;
         case 'top':
         case 'right':
         case 'bottom':
@@ -228,6 +233,7 @@ module.exports = () => ({
         case 'transform-rotate-z':
         case 'order':
         case 'flex-grow':
+        case 'word-spacing':
           obj.defaults = 0;
           break;
         case 'border-top-left-radius':
@@ -379,6 +385,7 @@ module.exports = () => ({
         case 'font-size':
         case 'letter-spacing':
         case 'line-height':
+        case 'word-spacing':
           obj.units = ['px', 'em', 'rem', '%', 'pt'];
           break;
         case 'border-width':
@@ -547,6 +554,14 @@ module.exports = () => ({
             { value: 'fixed' }
           ];
           break;
+        case 'font-style':
+          obj.list = [
+            { value: 'inherit' },
+            { value: 'italic' },
+            { value: 'normal' },
+            { value: 'oblique' },
+            { value: 'unset' }
+          ];
         case 'font-family':
           var ss = ', sans-serif';
           var fonts = [
