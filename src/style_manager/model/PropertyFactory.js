@@ -319,7 +319,7 @@ module.exports = () => ({
           obj.defaults = 'left';
           break;
         case 'text-decoration':
-          obj.defaults = 'normal';
+          obj.defaults = 'none';
           break;
         case 'border-style':
           obj.defaults = 'solid';
