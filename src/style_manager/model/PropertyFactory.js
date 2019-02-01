@@ -102,6 +102,7 @@ module.exports = () => ({
         case 'white-space':
         case 'list-style-type':
         case 'list-style-position':
+        case 'position':
           obj.type = 'select';
           break;
         case 'top':
@@ -158,7 +159,7 @@ module.exports = () => ({
         case 'border':
         case 'transform':
         case 'border-width':
-        case 'position':
+        case 'position-group':
           obj.type = 'composite';
           break;
         case 'color':
@@ -930,8 +931,9 @@ module.exports = () => ({
             'border-left-width'
           ]);
           break;
-        case 'position':
+        case 'position-group':
           obj.properties = this.build(['top', 'right', 'bottom', 'left']);
+          break;
       }
 
       //step

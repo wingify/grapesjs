@@ -14,7 +14,7 @@ let sectors = [{
 },{
   name: 'Dimensions',
   open: false,
-  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'top', 'right', 'bottom', 'left', 'margin', 'padding']
+  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'position', 'margin', 'padding']
 },{
   name: 'Border',
   open: false,
@@ -22,7 +22,7 @@ let sectors = [{
 },{
   name: 'Layout',
   open: false,
-  buildProps: ['position', 'display', 'visibility', 'z-index', 'overflow', 'overflow-x', 'overflow-y', 'float', 'clear', 'white-space', 'clip']
+  buildProps: ['position-group', 'display', 'visibility', 'z-index', 'overflow', 'overflow-x', 'overflow-y', 'float', 'clear', 'white-space', 'clip']
 },{
   name: 'Other',
   open: false,
@@ -39,6 +39,7 @@ utils.addKeyToStyleProperty(sectors, 'font-family', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'opacity', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'position', 'fullWidth', true);
 
 const displayNames = {
   'font-family': 'Font family',
@@ -116,7 +117,8 @@ const displayNames = {
   'marker-offset': 'Marker offset',
   'transition': 'Transition',
   'perspective': 'Perspective',
-  'transform': 'Transform'
+  'transform': 'Transform',
+  'position-group': 'Position'
 };
 
 for (let i in displayNames) {
