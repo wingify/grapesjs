@@ -14,11 +14,11 @@ let sectors = [{
 },{
   name: 'Dimensions',
   open: false,
-  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'box-shadow-h', 'box-shadow-v', 'box-shadow-blur', 'box-shadow-spread', 'box-shadow-color', 'box-shadow-type', 'top', 'right', 'bottom', 'left', 'margin', 'padding']
+  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'top', 'right', 'bottom', 'left', 'margin', 'padding']
 },{
   name: 'Border',
   open: false,
-  buildProps: ['border-top-style', 'border-right-style', 'border-bottom-style', 'border-left-style', 'border-top-color', 'border-right-color', 'border-bottom-color', 'border-left-color', 'border-width', 'border-radius']
+  buildProps: ['border-style', 'border-color', 'border-width', 'border-radius']
 },{
   name: 'Layout',
   open: false,
@@ -26,7 +26,7 @@ let sectors = [{
 },{
   name: 'Other',
   open: false,
-  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'marker-offset', 'transition-property', 'transition-duration', 'transition-timing-function', 'perspective', 'transform-rotate-x', 'transform-rotate-y', 'transform-rotate-z', 'transform-scale-x', 'transform-scale-y', 'transform-scale-z']
+  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'marker-offset', 'transition', 'perspective', 'transform']
 }];
 
 sectors.forEach(sector => {
@@ -69,12 +69,6 @@ const displayNames = {
   'max-height': 'Max height',
   'min-height': 'Min height',
   'box-shadow': 'Box shadow',
-  'box-shadow-h': 'Box shadow horizontal',
-  'box-shadow-v': 'Box shadow vertical',
-  'box-shadow-blur': 'Box shadow blur',
-  'box-shadow-spread': 'Box shadow spread',
-  'box-shadow-color': 'Box shadow colour',
-  'box-shadow-type': 'Box shadow type',
   'top': 'Top',
   'right': 'Right',
   'bottom': 'Bottom',
@@ -120,16 +114,9 @@ const displayNames = {
   'list-style-position': 'List style position',
   'list-style-image': 'List style image',
   'marker-offset': 'Marker offset',
-  'transition-property': 'Transition property',
-  'transition-duration': 'Transition duration',
-  'transition-timing-function': 'Transition timing function',
+  'transition': 'Transition',
   'perspective': 'Perspective',
-  'transform-rotate-x': 'Transform rotate x',
-  'transform-rotate-y': 'Transform rotate y',
-  'transform-rotate-z': 'Transform rotate z',
-  'transform-scale-x': 'Transform scale x',
-  'transform-scale-y': 'Transform scale y',
-  'transform-scale-z': 'Transform scale z'
+  'transform': 'Transform'
 };
 
 for (let i in displayNames) {

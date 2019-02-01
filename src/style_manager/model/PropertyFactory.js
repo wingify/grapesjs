@@ -68,6 +68,7 @@ module.exports = () => ({
       // Type
       switch (prop) {
         case 'text-align':
+        case 'text-decoration':
           obj.type = 'radio';
           break;
         case 'float':
@@ -93,6 +94,14 @@ module.exports = () => ({
         case 'overflow-x':
         case 'overflow-y':
         case 'font-style':
+        case 'direction':
+        case 'vertical-align':
+        case 'text-transform':
+        case 'visibility':
+        case 'clear':
+        case 'white-space':
+        case 'list-style-type':
+        case 'list-style-position':
           obj.type = 'select';
           break;
         case 'top':
@@ -208,6 +217,30 @@ module.exports = () => ({
         case 'font-style':
           obj.defaults = 'normal';
           break;
+        case 'direction':
+          obj.defaults = 'ltr';
+          break;
+        case 'vertical-align':
+          obj.defaults = 'baseline';
+          break;
+        case 'text-transform':
+          obj.defaults = 'none';
+          break;
+        case 'visibility':
+          obj.defaults = 'visible';
+          break;
+        case 'clear':
+          obj.defaults = 'none';
+          break;
+        case 'white-space':
+          obj.defaults = 'normal';
+          break;
+        case 'list-style-type':
+          obj.defaults = 'disc';
+          break;
+        case 'list-style-position':
+          obj.defaults = 'outside';
+          break;
         case 'top':
         case 'right':
         case 'bottom':
@@ -284,6 +317,9 @@ module.exports = () => ({
           break;
         case 'text-align':
           obj.defaults = 'left';
+          break;
+        case 'text-decoration':
+          obj.defaults = 'normal';
           break;
         case 'border-style':
           obj.defaults = 'solid';
@@ -562,6 +598,101 @@ module.exports = () => ({
             { value: 'oblique' },
             { value: 'unset' }
           ];
+          break;
+        case 'direction':
+          obj.list = [
+            { value: 'inherit' },
+            { value: 'initial' },
+            { value: 'ltr' },
+            { value: 'rtl' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'vertical-align':
+          obj.list = [
+            { value: 'baseline' },
+            { value: 'length' },
+            { value: 'sub' },
+            { value: 'super' },
+            { value: 'top' },
+            { value: 'text-top' },
+            { value: 'middle' },
+            { value: 'bottom' },
+            { value: 'text-bottom' },
+            { value: 'initial' },
+            { value: 'inherit' }
+          ];
+          break;
+        case 'text-transform':
+          obj.list = [
+            { value: 'none' },
+            { value: 'capitalize' },
+            { value: 'uppercase' },
+            { value: 'lowercase' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'visibility':
+          obj.list = [
+            { value: 'visible' },
+            { value: 'hidden' },
+            { value: 'collapse' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'clear':
+          obj.list = [
+            { value: 'none' },
+            { value: 'left' },
+            { value: 'right' },
+            { value: 'both' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'white-space':
+          obj.list = [
+            { value: 'normal' },
+            { value: 'nowrap' },
+            { value: 'pre' },
+            { value: 'pre-line' },
+            { value: 'pre-wrap' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'list-style-type':
+          obj.list = [
+            { value: 'disc' },
+            { value: 'circle' },
+            { value: 'decimal' },
+            { value: 'decimal-leading-zero' },
+            { value: 'none' },
+            { value: 'square' },
+            { value: 'lower-alpha' },
+            { value: 'lower-roman' },
+            { value: 'upper-alpha' },
+            { value: 'upper-roman' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
+        case 'list-style-position':
+          obj.list = [
+            { value: 'inside' },
+            { value: 'outside' },
+            { value: 'initial' },
+            { value: 'inherit' },
+            { value: 'unset' }
+          ];
+          break;
         case 'font-family':
           var ss = ', sans-serif';
           var fonts = [
@@ -606,6 +737,13 @@ module.exports = () => ({
             { value: 'center' },
             { value: 'right' },
             { value: 'justify' }
+          ];
+          break;
+        case 'text-decoration':
+          obj.list = [
+            { value: 'none' },
+            { value: 'underline' },
+            { value: 'line-through' }
           ];
           break;
         case 'border-style':
