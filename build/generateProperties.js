@@ -71,26 +71,6 @@ try {
     })
   });
 
-  //Export all properties except anchor in a js file
-  let elementProperties = properties.filter(property => property.type !== 'link');
-
-  //add an exception for SELECT element -> Remove options property
-  elementProperties.forEach(property => {
-    if (property.type === 'select') {
-      property.props = property.props.filter(prop => prop.label !== 'Options');
-    }
-  });
-
-  //add an exception for BUTTON element -> Remove Content property
-  elementProperties.forEach(property => {
-    if (property.type === 'button') {
-      property.props = property.props.filter(prop => prop.type !== 'content');
-    }
-  });
-
-  utils.exportJsonToFile('build/dist/grapes-properties.js', elementProperties);
-  console.log('Properties exported successfully');
-
   //Export anchor tag properties in a separate file
   let anchorTagProperties = properties.find(property => property.type === 'link');
   anchorTagProperties.type = 'a';
@@ -102,6 +82,29 @@ try {
   });
   utils.exportJsonToFile('build/dist/grapes-properties-anchortag.js', [anchorTagProperties]);
   console.log('Anchor tag properties exported successfully');
+
+  //Export all properties except anchor in a js file
+  //let elementProperties = properties.filter(property => property.type !== 'link');
+  let elementProperties = properties.slice();
+
+  elementProperties.forEach(property => {
+    //add an exception for SELECT element -> Remove options property
+    if (property.type === 'select') {
+      property.props = property.props.filter(prop => prop.label !== 'Options');
+    }
+
+    //add an exception for BUTTON element -> Remove Content property
+    if (property.type === 'button') {
+      property.props = property.props.filter(prop => prop.type !== 'content');
+    }
+
+    if (property.type === 'link') {
+      property = anchorTagProperties;
+    }
+  });
+
+  utils.exportJsonToFile('build/dist/grapes-properties.js', elementProperties);
+  console.log('Properties exported successfully');
 
 } catch(e) {
   console.log(e);
