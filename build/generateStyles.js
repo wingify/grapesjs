@@ -14,7 +14,7 @@ let sectors = [{
 },{
   name: 'Dimensions',
   open: false,
-  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'position', 'margin', 'padding']
+  buildProps: ['width', 'height', 'max-width', 'min-width', 'max-height', 'min-height', 'box-shadow', 'margin', 'padding']
 },{
   name: 'Border',
   open: false,
@@ -22,11 +22,11 @@ let sectors = [{
 },{
   name: 'Layout',
   open: false,
-  buildProps: ['position-group', 'display', 'visibility', 'z-index', 'overflow', 'overflow-x', 'overflow-y', 'float', 'clear', 'white-space', 'clip']
+  buildProps: ['position', 'position-group', 'display', 'visibility', 'z-index', 'overflow', 'overflow-x', 'overflow-y', 'float', 'clear', 'white-space', 'clip']
 },{
   name: 'Other',
   open: false,
-  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'marker-offset', 'transition', 'perspective', 'transform']
+  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'marker-offset', 'transition', 'transform', 'perspective']
 }];
 
 sectors.forEach(sector => {
@@ -40,6 +40,7 @@ utils.addKeyToStyleProperty(sectors, 'opacity', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'position', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'transform', 'fullWidth', true);
 
 const displayNames = {
   'font-family': 'Font family',
@@ -74,22 +75,27 @@ const displayNames = {
   'right': 'Right',
   'bottom': 'Bottom',
   'left': 'Left',
+  'margin': 'Margin',
   'margin-top': 'Top',
   'margin-right': 'Right',
   'margin-bottom': 'Bottom',
   'margin-left': 'Left',
+  'padding': 'Padding',
   'padding-top': 'Top',
   'padding-right': 'Right',
   'padding-bottom': 'Bottom',
   'padding-left': 'Left',
+  'border-style': 'Border style',
   'border-top-style': 'Border style top',
   'border-right-style': 'Border style right',
   'border-bottom-style': 'Border style bottom',
   'border-left-style': 'Border style left',
+  'border-color': 'Border colour',
   'border-top-color': 'Border colour top',
   'border-right-color': 'Border colour right',
   'border-bottom-color': 'Border colour bottom',
   'border-left-color': 'Border colour left',
+  'border-width': 'Border width',
   'border-top-width': 'Top',
   'border-right-width': 'Right',
   'border-bottom-width': 'Bottom',

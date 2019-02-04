@@ -151,13 +151,17 @@ module.exports = () => ({
         case 'flex-shrink':
         case 'flex-basis':
         case 'word-spacing':
+        case 'border-top-width':
+        case 'border-right-width':
+        case 'border-bottom-width':
+        case 'border-left-width':
           obj.type = 'integer';
           break;
         case 'margin':
         case 'padding':
         case 'border-radius':
         case 'border':
-        case 'transform':
+        //case 'transform':
         case 'border-width':
         case 'position-group':
           obj.type = 'composite';
@@ -391,8 +395,6 @@ module.exports = () => ({
         case 'min-height':
         case 'max-height':
         case 'height':
-          obj.units = ['px', '%', 'vh'];
-          break;
         case 'right':
         case 'left':
         case 'margin-right':
@@ -402,8 +404,6 @@ module.exports = () => ({
         case 'min-width':
         case 'max-width':
         case 'width':
-          obj.units = ['px', '%', 'vw'];
-          break;
         case 'flex-basis':
           obj.units = ['px', '%', 'vw', 'vh'];
           break;
@@ -426,6 +426,10 @@ module.exports = () => ({
           obj.units = ['px', 'em', 'rem', '%', 'pt'];
           break;
         case 'border-width':
+        case 'border-top-width':
+        case 'border-right-width':
+        case 'border-bottom-width':
+        case 'border-left-width':
           obj.units = ['px', 'em'];
           break;
         case 'box-shadow-blur':
@@ -593,46 +597,30 @@ module.exports = () => ({
           break;
         case 'font-style':
           obj.list = [
-            { value: 'inherit' },
             { value: 'italic' },
             { value: 'normal' },
-            { value: 'oblique' },
-            { value: 'unset' }
+            { value: 'inherit' }
           ];
           break;
         case 'direction':
-          obj.list = [
-            { value: 'inherit' },
-            { value: 'initial' },
-            { value: 'ltr' },
-            { value: 'rtl' },
-            { value: 'unset' }
-          ];
+          obj.list = [{ value: 'ltr' }, { value: 'rtl' }, { value: 'inherit' }];
           break;
         case 'vertical-align':
           obj.list = [
-            { value: 'baseline' },
-            { value: 'length' },
-            { value: 'sub' },
-            { value: 'super' },
             { value: 'top' },
-            { value: 'text-top' },
             { value: 'middle' },
             { value: 'bottom' },
-            { value: 'text-bottom' },
-            { value: 'initial' },
+            { value: 'baseline' },
             { value: 'inherit' }
           ];
           break;
         case 'text-transform':
           obj.list = [
             { value: 'none' },
-            { value: 'capitalize' },
             { value: 'uppercase' },
             { value: 'lowercase' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'capitalize' },
+            { value: 'inherit' }
           ];
           break;
         case 'visibility':
@@ -640,9 +628,7 @@ module.exports = () => ({
             { value: 'visible' },
             { value: 'hidden' },
             { value: 'collapse' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'inherit' }
           ];
           break;
         case 'clear':
@@ -651,9 +637,7 @@ module.exports = () => ({
             { value: 'left' },
             { value: 'right' },
             { value: 'both' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'inherit' }
           ];
           break;
         case 'white-space':
@@ -663,35 +647,24 @@ module.exports = () => ({
             { value: 'pre' },
             { value: 'pre-line' },
             { value: 'pre-wrap' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'inherit' }
           ];
           break;
         case 'list-style-type':
           obj.list = [
             { value: 'disc' },
             { value: 'circle' },
-            { value: 'decimal' },
-            { value: 'decimal-leading-zero' },
-            { value: 'none' },
             { value: 'square' },
-            { value: 'lower-alpha' },
-            { value: 'lower-roman' },
-            { value: 'upper-alpha' },
-            { value: 'upper-roman' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'decimal' },
+            { value: 'none' },
+            { value: 'inherit' }
           ];
           break;
         case 'list-style-position':
           obj.list = [
             { value: 'inside' },
             { value: 'outside' },
-            { value: 'initial' },
-            { value: 'inherit' },
-            { value: 'unset' }
+            { value: 'inherit' }
           ];
           break;
         case 'font-family':
