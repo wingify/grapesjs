@@ -26,7 +26,7 @@ let sectors = [{
 },{
   name: 'Other',
   open: false,
-  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'marker-offset', 'transition', 'transform', 'perspective']
+  buildProps: ['cursor', 'list-style-type', 'list-style-position', 'list-style-image', 'transition', 'transform', 'perspective']
 }];
 
 sectors.forEach(sector => {
@@ -120,7 +120,6 @@ const displayNames = {
   'list-style-type': 'List style type',
   'list-style-position': 'List style position',
   'list-style-image': 'List style image',
-  'marker-offset': 'Marker offset',
   'transition': 'Transition',
   'perspective': 'Perspective',
   'transform': 'Transform',
