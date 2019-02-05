@@ -41,6 +41,7 @@ utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'position', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'transform', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'font-family', 'list', []);
 
 const displayNames = {
   'font-family': 'Font family',
@@ -131,7 +132,7 @@ for (let i in displayNames) {
 }
 
 //Remove values from font-family property as we would be getting these from the user's page
-utils.removeKeyFromProperty(sectors, 'font-family', 'list');
+//utils.removeKeyFromProperty(sectors, 'font-family', 'list');
 utils.removeKeyFromProperty(sectors, 'font-family', 'defaults');
 
 utils.exportJsonToFile('build/dist/grapes-styles.js', sectors);
