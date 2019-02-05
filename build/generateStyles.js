@@ -6,7 +6,7 @@ let sectors = [{
   name: 'Text',
   open: false,
   //buildProps: ['font-family', 'font-size', 'font-weight', 'font-style', 'font-size-adjust', 'color', 'text-transform', 'text-decoration', 'letter-spacing', 'word-spacing', 'line-height', 'text-align', 'vertical-align', 'direction', 'text-shadow-h', 'text-shadow-v', 'text-shadow-blur', 'text-shadow-color']
-  buildProps: ['font-family', 'font-size', 'color', 'font-style', 'font-weight', 'letter-spacing', 'line-height', 'text-align', 'text-decoration', 'vertical-align', 'direction', 'font-size-adjust', 'text-transform', 'word-spacing']
+  buildProps: ['font-family', 'font-size', 'color', 'font-style', 'font-weight', 'letter-spacing', 'line-height', 'text-align', 'text-decoration', 'vertical-align', 'direction', 'text-transform', 'word-spacing']
 },{
   name: 'Background',
   open: false,
