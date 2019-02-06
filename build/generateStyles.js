@@ -41,6 +41,7 @@ utils.addKeyToStyleProperty(sectors, 'box-shadow', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'list-item-image', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'position', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'transform', 'fullWidth', true);
+utils.addKeyToStyleProperty(sectors, 'transition', 'fullWidth', true);
 utils.addKeyToStyleProperty(sectors, 'font-family', 'list', []);
 
 const displayNames = {
