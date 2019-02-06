@@ -81,7 +81,6 @@ module.exports = () => ({
         case 'align-self':
         case 'font-family':
         case 'font-weight':
-        case 'border-style':
         case 'box-shadow-type':
         case 'background-repeat':
         case 'background-position':
@@ -103,6 +102,10 @@ module.exports = () => ({
         case 'list-style-type':
         case 'list-style-position':
         case 'position':
+        case 'border-top-style':
+        case 'border-right-style':
+        case 'border-bottom-style':
+        case 'border-left-style':
           obj.type = 'select';
           break;
         case 'top':
@@ -163,13 +166,19 @@ module.exports = () => ({
         case 'border':
         //case 'transform':
         case 'border-width':
+        case 'border-style':
+        case 'border-color':
         case 'position-group':
           obj.type = 'composite';
           break;
         case 'color':
         case 'text-shadow-color':
         case 'background-color':
-        case 'border-color':
+        // case 'border-color':
+        case 'border-top-color':
+        case 'border-right-color':
+        case 'border-bottom-color':
+        case 'border-left-color':
         case 'box-shadow-color':
           obj.type = 'color';
           break;
@@ -720,7 +729,11 @@ module.exports = () => ({
             { value: 'line-through' }
           ];
           break;
-        case 'border-style':
+        // case 'border-style':
+        case 'border-top-style':
+        case 'border-right-style':
+        case 'border-bottom-style':
+        case 'border-left-style':
           obj.list = [
             { value: 'none' },
             { value: 'solid' },
@@ -902,6 +915,22 @@ module.exports = () => ({
             'border-right-width',
             'border-bottom-width',
             'border-left-width'
+          ]);
+          break;
+        case 'border-style':
+          obj.properties = this.build([
+            'border-top-style',
+            'border-right-style',
+            'border-bottom-style',
+            'border-left-style'
+          ]);
+          break;
+        case 'border-color':
+          obj.properties = this.build([
+            'border-top-color',
+            'border-right-color',
+            'border-bottom-color',
+            'border-left-color'
           ]);
           break;
         case 'position-group':
