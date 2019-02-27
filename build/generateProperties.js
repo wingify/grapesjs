@@ -82,7 +82,7 @@ try {
 
     if (property.name === 'target') {
       property.displayName = 'Open link in';
-      property.otherDisplayName = 'Custom window/named frame';
+      property.otherDisplayName = 'Custom window/frame';
     }
   });
   utils.exportJsonToFile('build/dist/grapes-properties-anchortag.js', [anchorTagProperties]);

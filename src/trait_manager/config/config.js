@@ -15,8 +15,8 @@ module.exports = {
 
   // Default options for the target input
   optionsTarget: [
-    { value: '', name: 'Same window' },
-    { value: '_blank', name: 'New window' }
+    { value: '', name: 'Same tab' },
+    { value: '_blank', name: 'New tab' }
   ],
 
   // Text to show in case no element selected
