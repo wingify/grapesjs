@@ -15,7 +15,7 @@ module.exports = {
 
   // Default options for the target input
   optionsTarget: [
-    { value: '', name: 'This window' },
+    { value: '', name: 'Same window' },
     { value: '_blank', name: 'New window' }
   ],
 

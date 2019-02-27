@@ -79,6 +79,11 @@ try {
     if (property.name === 'href') {
       property.displayName = 'URL';
     }
+
+    if (property.name === 'target') {
+      property.displayName = 'Open link in';
+      property.otherDisplayName = 'Custom window/named frame';
+    }
   });
   utils.exportJsonToFile('build/dist/grapes-properties-anchortag.js', [anchorTagProperties]);
   console.log('Anchor tag properties exported successfully');
